@@ -62,6 +62,7 @@ export function serializePrize(prizeData: unknown): Prize | undefined {
       pointsRequired: 0,
       image: "empty.png",
       status: "unavailable",
+      stock: 0,
     };
   }
 
@@ -72,6 +73,7 @@ export function serializePrize(prizeData: unknown): Prize | undefined {
     pointsRequired: Number(p.pointsRequired),
     image: String(p.image),
     status: String(p.status) as "available" | "unavailable",
+    stock: Number(p.stock || 0),
     createdAt: (p.createdAt as Date)?.toISOString(),
     updatedAt: (p.updatedAt as Date)?.toISOString(),
   };
