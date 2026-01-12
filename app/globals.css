@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+#enterSvg {
+  position: fixed;
+  width: 100vw;
+  height: 115vh;
+  top: 100vh;
+  z-index: 91;
+  left: 0;
+  pointer-events: none;
+}
+
+@theme {
+  /* Custom Colors */
+  --color-aam-white: #fff;
+  --color-aam-beige-200: #ece5d5;
+  --color-aam-black: #111111;
+  --color-aam-violes: #BEA1FA;
+  --color-aam-orange: #F75000;
+  --color-aam-gray-200: #E9ECEF;
+  --color-aam-gray-300: #e7e0da;
+  --color-aam-gray-400: #212529;
+  --color-aam-wine: #790522;
+  --color-aam-green: #a4ee09;
+  --color-aam-yellow: #f4b104;
+
+  /* https://typespiration.com/design/dream/ */
+  /* https://www.jiddo.ca/about */
+  /* https://www.itsolutions-inc.com/services/cloud/ */
+  /* https://savor.it/ */
+  /* https://seatrees.org/collections/plant-or-restore */
+
+
+  /* Font Families */
+  --font-noto-sans: var(--font-noto-sans);
+  --font-roslindale: var(--font-roslindale);
+  --font-clash-display: var(--font-clash-display);
+}
+
+@custom-variant notebook {
+  @media (width < 1280px) {
+      @slot;
+  }
+}
+
+@custom-variant tablet {
+  @media (width < 1024px) {
+      @slot;
+  }
+}
+
+
+@custom-variant mobile {
+  @media (width < 768px) {
+      @slot;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-noto-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html, body  {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-clash-display);
+  font-weight: 700;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out forwards;
+}
+
+button {
+  cursor: pointer;
+}
