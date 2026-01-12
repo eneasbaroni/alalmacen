@@ -11,7 +11,7 @@ export const addPointsSchema = z.object({
 
   // Cantidad de puntos a agregar
   points: z
-    .number({ invalid_type_error: "Debe ser un número" })
+    .number({ message: "Debe ser un número" })
     .int("Debe ser un número entero")
     .positive("Debe ser un número positivo")
     .max(10000, "Máximo 10,000 puntos por transacción"),
