@@ -46,6 +46,7 @@ export default async function PrizesPage() {
     pointsRequired: prize.pointsRequired,
     image: prize.image,
     status: prize.status,
+    stock: prize.stock,
     createdAt: prize.createdAt?.toISOString(),
     updatedAt: prize.updatedAt?.toISOString(),
   }));
