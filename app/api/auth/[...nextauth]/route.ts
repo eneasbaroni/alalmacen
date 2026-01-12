@@ -30,6 +30,29 @@ export const authOptions: NextAuthOptions = {
         return false;
       }
     },
+    async jwt({ token, user }) {
+      // Al iniciar sesión, agregar el rol al token
+      if (user?.email) {
+        try {
+          const dbUser = await UserService.findByEmail(user.email);
+          if (dbUser) {
+            (token as { role?: string }).role = dbUser.role;
+          }
+        } catch (error) {
+          console.error("Error fetching user role:", error);
+        }
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      // Agregar el rol a la sesión
+      if (session?.user && (token as { role?: string }).role) {
+        (session.user as { role?: string }).role = (
+          token as { role?: string }
+        ).role;
+      }
+      return session;
+    },
   },
   theme: {
     colorScheme: "dark", // "auto" | "dark" | "light"

@@ -2,32 +2,17 @@
 import { useSession } from "next-auth/react";
 import { UserProfile } from "@/components/features/auth";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function ProfilePage() {
   const { data: session, status } = useSession();
   const router = useRouter();
-  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     if (status === "unauthenticated") {
       router.push("/");
     }
-    // Detectar si es admin
-    if (status === "authenticated" && session?.user?.email) {
-      fetch("/api/user", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: session.user.email }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.user?.role === "admin") {
-            setIsAdmin(true);
-          }
-        });
-    }
-  }, [status, router, session]);
+  }, [status, router]);
 
   if (status === "loading") {
     return (
@@ -40,6 +25,8 @@ export default function ProfilePage() {
   if (!session) {
     return null;
   }
+
+  const isAdmin = (session.user as { role?: string })?.role === "admin";
 
   return (
     <main className="bg-gray-100 w-full min-h-screen flex flex-col items-center justify-center gap-4 py-8">
