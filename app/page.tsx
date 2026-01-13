@@ -1,4 +1,9 @@
-import { Hero, Features, HowItWorks } from "@/components/features/landing";
+import {
+  Hero,
+  Features,
+  HowItWorks,
+  Footer,
+} from "@/components/features/landing";
 
 export default function Home() {
   return (
@@ -11,6 +16,9 @@ export default function Home() {
 
       {/* How It Works Section */}
       <HowItWorks />
+
+      {/* Footer Section */}
+      <Footer />
     </main>
   );
 }

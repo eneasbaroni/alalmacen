@@ -3,3 +3,4 @@ export { Features } from "./Features";
 export { HowItWorks } from "./HowItWorks";
 export { FeatureCard } from "./FeatureCard";
 export { StepCard } from "./StepCard";
+export { Footer } from "./Footer";
