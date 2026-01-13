@@ -32,13 +32,21 @@ export const Footer = () => {
     [0, isMobile ? 20 : 100]
   );
 
+  const roundedTop = useTransform(scrollYProgress, [0, 1], [0, 50]);
+
   return (
     <motion.div
       ref={containerRef}
-      className="mx-4 h-screen bg-white"
+      className="mx-4 h-[calc(100vh-5rem)] bg-white"
       style={{ paddingLeft: paddingX, paddingRight: paddingX }}
     >
-      <div className="bg-aam-orange h-full rounded-t-4xl overflow-hidden flex flex-col items-start justify-end p-8">
+      <motion.div
+        className="bg-aam-orange h-full overflow-hidden flex flex-col items-start justify-end p-8"
+        style={{
+          borderTopLeftRadius: roundedTop,
+          borderTopRightRadius: roundedTop,
+        }}
+      >
         <p className="text-white w-1/3 mobile:w-3/4 mobile:text-sm mb-10 mobile:mb-6">
           Alalmacén - Tu almacén de barrio con alma gourmet. Donde lo cotidiano
           se encuentra con sabores excepcionales y vinos selectos.
@@ -79,7 +87,7 @@ export const Footer = () => {
           </a>
           .
         </p>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
