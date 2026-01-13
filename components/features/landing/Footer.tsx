@@ -44,7 +44,11 @@ export const Footer = () => {
           se encuentra con sabores excepcionales y vinos selectos.
           <br />
           <br />
-          <a href="https://maps.app.goo.gl/Am2T6evaLakau9fn8">
+          <a
+            href="https://maps.app.goo.gl/Am2T6evaLakau9fn8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             José ingenieros 798, Villa María, Córdoba, Argentina
           </a>
           <br />
