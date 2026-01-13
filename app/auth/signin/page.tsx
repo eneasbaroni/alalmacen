@@ -27,7 +27,7 @@ function SignInContent() {
 
         {/* Título y descripción */}
         <h1 className="text-3xl font-bold text-white mb-3 font-clash-display">
-          Bienvenido a Al Almacén
+          Bienvenido a Alalmacén
         </h1>
         <p className="text-gray-300 mb-6 text-sm">
           Iniciá sesión para acumular puntos y canjear premios increíbles
