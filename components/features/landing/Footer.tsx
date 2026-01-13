@@ -37,7 +37,7 @@ export const Footer = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="mx-4 h-[calc(100vh-5rem)] bg-white"
+      className="mx-4 h-[calc(100dvh-5rem)] bg-white"
       style={{ paddingLeft: paddingX, paddingRight: paddingX }}
     >
       <motion.div
