@@ -28,9 +28,9 @@ export function Navbar() {
           {/* Perfil con badge - Derecha */}
           {session?.user?.image && (
             <div className="relative flex items-center">
-              {/* Badge de premios pendientes */}
+              {/* Badge de premios pendientes - Solo desktop */}
               {pendingCount > 0 && (
-                <div className="absolute -top-1 -left-2 z-10 group">
+                <div className="hidden md:block absolute -top-1 -left-2 z-10 group">
                   <div
                     className="bg-aam-orange text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-semibold shadow-lg hover:bg-aam-orange/90 transition-colors border-2 border-white cursor-pointer"
                     onClick={(e) => {

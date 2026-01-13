@@ -7,7 +7,7 @@ export function LoginButton() {
     <Button
       onClick={() => signIn()}
       text={"Iniciar sesión"}
-      className="font-clash-display"
+      className="font-clash-display ml-4 py-1!"
     />
   );
 }

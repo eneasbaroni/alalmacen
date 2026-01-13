@@ -16,7 +16,7 @@ interface UserProfileProps {
   isAdmin?: boolean;
 }
 
-export function UserProfile({ session, isAdmin = false }: UserProfileProps) {
+export function UserProfile({ session }: UserProfileProps) {
   const { user, loading, refetch } = useUser(session.user?.email);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -26,7 +26,13 @@ export function UserProfile({ session, isAdmin = false }: UserProfileProps) {
   };
 
   if (loading) {
-    return <Skeleton className="h-96 w-96" />;
+    return (
+      <div className="flex flex-col gap-4 max-w-md w-full">
+        <Skeleton className="h-12 w-full" />
+        <Skeleton className="h-12 w-full" />
+        <Skeleton className="h-12 w-full" />
+      </div>
+    );
   }
 
   return (
@@ -64,7 +70,7 @@ export function UserProfile({ session, isAdmin = false }: UserProfileProps) {
         )}
 
         {/* Puntos del usuario */}
-        {user?.dni && (
+        {user?.dni && user?.role !== "admin" && (
           <div className="w-full bg-white border border-aam-orange/30 rounded-lg p-6 text-center">
             <p className="text-sm text-aam-orange font-medium mb-2">
               Puntos acumulados
@@ -77,7 +83,7 @@ export function UserProfile({ session, isAdmin = false }: UserProfileProps) {
 
         {/* Acciones */}
         <div className="w-full flex flex-col gap-3">
-          {user?.dni ? (
+          {user?.dni && user?.role !== "admin" ? (
             <>
               <Link href="/prizes" className="w-full">
                 <button className="w-full px-6 py-3 border border-transparent rounded-3xl bg-gray-100 font-normal hover:border hover:border-aam-orange/80 hover:text-aam-orange transition-colors font-clash-display">
@@ -91,16 +97,18 @@ export function UserProfile({ session, isAdmin = false }: UserProfileProps) {
               </Link>
             </>
           ) : (
-            <div className="w-full  border border-aam-orange/20 rounded-lg p-6 text-center">
-              <p className="text-sm text-gray-700 mb-4">
-                Debes cargar tu DNI para poder disfrutar de los beneficios
-              </p>
-              <Button
-                onClick={() => setIsModalOpen(true)}
-                className="bg-gray-100 hover:text-aam-orange!"
-                text={"Cargar DNI"}
-              />
-            </div>
+            user?.role !== "admin" && (
+              <div className="w-full  border border-aam-orange/20 rounded-lg p-6 text-center">
+                <p className="text-sm text-gray-700 mb-4">
+                  Debes cargar tu DNI para poder disfrutar de los beneficios
+                </p>
+                <Button
+                  onClick={() => setIsModalOpen(true)}
+                  className="bg-gray-100 hover:text-aam-orange!"
+                  text={"Cargar DNI"}
+                />
+              </div>
+            )
           )}
 
           <button

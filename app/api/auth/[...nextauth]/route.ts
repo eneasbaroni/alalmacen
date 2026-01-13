@@ -60,6 +60,9 @@ export const authOptions: NextAuthOptions = {
     logo: "/logoC.png", // Absolute URL to image
     buttonText: "ffffff", // Hex color code
   },
+  pages: {
+    signIn: "/auth/signin",
+  },
 };
 
 const handler = NextAuth(authOptions);

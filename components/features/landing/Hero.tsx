@@ -16,22 +16,25 @@ export function Hero() {
         </h1>
       </div>
       <div className="w-1/2 mobile:w-full flex flex-col items-start justify-end text-left relative font-roslindale font-extralight! text-4xl tablet:text-3xl mobile:text-2xl">
-        <h2 className="font-extralight!">
+        <h2 className="font-extralight! font-clash-display">
           Cada compra suma momentos especiales.
         </h2>
 
         <div className="inline-block font-noto-sans font-extralight!">
-          <span className="font-thin">
+          <span className="font-thin font-clash-display">
             Convertí tus compras en recompensas. Canjeá tus puntos por productos
-            premium, descuentos exclusivos y experiencias únicas →
+            premium, descuentos exclusivos y experiencias únicas.
           </span>
           {status === "loading" && (
             <Skeleton className="inline-block h-10 w-32 ml-2 rounded-md" />
           )}
           {status !== "loading" && !session && <LoginButton />}
           {status === "authenticated" && session && (
-            <Link href="/profile">
-              <Button text="Ver mi perfil" className="font-clash-display" />
+            <Link href="/profile" className="ml-4">
+              <Button
+                text="Ver mi perfil"
+                className="font-clash-display py-1!"
+              />
             </Link>
           )}
         </div>

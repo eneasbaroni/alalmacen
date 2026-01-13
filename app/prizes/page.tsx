@@ -5,9 +5,11 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { UserService } from "@/app/api/DAO/services/userService";
 import { PrizeService } from "@/app/api/DAO/services/prizeService";
 import { Prize } from "@/types/prize";
-import { GiftIcon } from "@/app/icons";
+import { CoinIcon, GiftIcon } from "@/app/icons";
+
 import ClientPrizesManager from "../../components/client/ClientPrizesManager";
 import { Button } from "@/components/ui";
+import { AlertBanner } from "@/components/common/AlertBanner";
 
 export const metadata: Metadata = {
   title: "Alalmacén - Catálogo de Premios",
@@ -99,6 +101,15 @@ export default async function PrizesPage() {
               </span>
             </div>
           )}
+        </div>
+
+        {/* Banner informativo sobre descuentos */}
+        <div className="mb-6">
+          <AlertBanner
+            variant="green"
+            icon={<CoinIcon />}
+            message="Además de premios, podés usar tus puntos como descuentos en tus compras. Acercate al local y consultá por este beneficio."
+          />
         </div>
 
         {/* Prizes Manager Component */}
