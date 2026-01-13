@@ -13,7 +13,7 @@ import { AlertBanner } from "@/components/common/AlertBanner";
 
 export const metadata: Metadata = {
   title: "Alalmacén - Catálogo de Premios",
-  description: "Canjea tus puntos por increíbles premios en Al Almacén",
+  description: "Canjea tus puntos por increíbles premios en Alalmacén",
 };
 
 export default async function PrizesPage() {

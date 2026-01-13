@@ -17,7 +17,7 @@ function SignInContent() {
           <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center">
             <Image
               src="/logoC.png"
-              alt="Al Almacén"
+              alt="Alalmacén"
               width={80}
               height={80}
               className="object-contain"
