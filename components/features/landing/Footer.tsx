@@ -4,9 +4,22 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
+import Lenis from "lenis";
+
 export const Footer = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -37,7 +50,7 @@ export const Footer = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="mx-4 h-[calc(100dvh-5rem)] bg-white"
+      className="mx-4 h-[calc(100vh-5rem)] bg-white"
       style={{ paddingLeft: paddingX, paddingRight: paddingX }}
     >
       <motion.div
