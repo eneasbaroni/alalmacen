@@ -57,7 +57,7 @@ export async function PUT(
       );
     }
 
-    // 🔒 VALIDACIÓN: Verificar que el premio aún existe y está disponible
+    // 🔒 VALIDACIÓN: Verificar que el premio aún existe
     const prizeId =
       typeof transaction.prizeID === "object"
         ? String(transaction.prizeID._id)
@@ -69,13 +69,6 @@ export async function PUT(
       return NextResponse.json(
         { error: "El premio ya no existe" },
         { status: 404 }
-      );
-    }
-
-    if (prize.status !== "available") {
-      return NextResponse.json(
-        { error: "El premio ya no está disponible" },
-        { status: 400 }
       );
     }
 

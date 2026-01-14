@@ -1,14 +1,10 @@
 "use client";
 
 import { signIn } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Suspense } from "react";
 
 function SignInContent() {
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/";
-
   return (
     <main className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
       <div className="bg-gray-800 rounded-2xl p-8 max-w-md w-full text-center">
@@ -53,7 +49,7 @@ function SignInContent() {
 
         {/* Botón de Google */}
         <button
-          onClick={() => signIn("google", { callbackUrl })}
+          onClick={() => signIn("google", { callbackUrl: "/profile" })}
           className="w-full bg-white hover:bg-gray-50 text-gray-900 font-medium py-3 px-6 rounded-lg flex items-center justify-center gap-3 transition-colors"
         >
           <svg className="w-5 h-5" viewBox="0 0 24 24">

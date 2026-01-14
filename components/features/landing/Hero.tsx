@@ -21,7 +21,7 @@ export function Hero() {
         </h2>
 
         <div className="inline-block font-noto-sans font-extralight!">
-          <span className="font-thin font-clash-display">
+          <span className="font-thin font-clash-display mr-4">
             Convertí tus compras en recompensas. Canjeá tus puntos por productos
             premium, descuentos exclusivos y experiencias únicas.
           </span>
@@ -30,7 +30,7 @@ export function Hero() {
           )}
           {status !== "loading" && !session && <LoginButton />}
           {status === "authenticated" && session && (
-            <Link href="/profile" className="ml-4">
+            <Link href="/profile">
               <Button
                 text="Ver mi perfil"
                 className="font-clash-display py-1!"
