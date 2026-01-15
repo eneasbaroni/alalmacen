@@ -36,9 +36,8 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
       circle.current,
       {
         scale: [0, 1],
-        bottom: ["-110vh", "-100vh"],
-        borderRadius: ["100%", "0%"],
-        height: ["100vw", "200vh"],
+        bottom: ["-105vh", "-100vh"],
+        borderRadius: ["30rem", "30rem", "0rem"],
       },
       { ...ANIMATION_CONFIG.leave, onComplete: next }
     );
@@ -55,9 +54,8 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
       circle.current,
       {
         scale: [1, 0],
-        bottom: ["-100vh", "-110vh"],
-        borderRadius: ["0%", "100%"],
-        height: ["200vh", "100vw"],
+        bottom: ["-100vh", "-105vh"],
+        borderRadius: ["0rem", "30rem", "30rem"],
       },
       ANIMATION_CONFIG.enter
     );
@@ -78,7 +76,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
           className="fixed bg-aam-orange pointer-events-none"
           style={{
             width: "100vw",
-            //height: "200vh",
+            height: "200vh",
             //bottom: "-142vmax",
             left: "50%",
             marginLeft: "-50vw",
