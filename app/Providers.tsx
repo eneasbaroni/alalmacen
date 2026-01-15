@@ -34,7 +34,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
 
     animate(
       circle.current,
-      { scale: [0, 1], bottom: ["-50%", "-50%"] },
+      { scale: [0, 1], bottom: ["-71vmax", "-71vmax"] },
       { ...ANIMATION_CONFIG.leave, onComplete: next }
     );
   }, []);
@@ -48,7 +48,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
 
     animate(
       circle.current,
-      { scale: [1, 0], bottom: ["-50%", "-50%"] },
+      { scale: [1, 0], bottom: ["-71vmax", "-71vmax"] },
       ANIMATION_CONFIG.enter
     );
     animate(
