@@ -69,9 +69,9 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
           style={{
             width: "142vmax",
             height: "142vmax",
-            //bottom: "-52vmax",
+            bottom: "-72vmax",
             left: "50%",
-            
+            marginLeft: "-71vmax",
             transform: "scale(0)",
             zIndex: 50,
           }}
