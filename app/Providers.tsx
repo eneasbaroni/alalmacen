@@ -71,7 +71,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
             height: "284vmax",
             //bottom: "-142vmax",
             left: "50%",
-            marginLeft: "-71vmax",
+            marginLeft: "-142vmax",
             transform: "scale(0)",
             zIndex: 50,
           }}
