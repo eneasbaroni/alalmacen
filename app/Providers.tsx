@@ -38,6 +38,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
         scale: [0, 1],
         bottom: ["-110vh", "-100vh"],
         borderRadius: ["100%", "0%"],
+        height: ["100vw", "200vh"],
       },
       { ...ANIMATION_CONFIG.leave, onComplete: next }
     );
@@ -56,6 +57,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
         scale: [1, 0],
         bottom: ["-100vh", "-110vh"],
         borderRadius: ["0%", "100%"],
+        height: ["200vh", "100vw"],
       },
       ANIMATION_CONFIG.enter
     );
@@ -76,7 +78,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
           className="fixed bg-aam-orange pointer-events-none"
           style={{
             width: "100vw",
-            height: "200vh",
+            //height: "200vh",
             //bottom: "-142vmax",
             left: "50%",
             marginLeft: "-50vw",
