@@ -34,7 +34,11 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
 
     animate(
       circle.current,
-      { scale: [0, 1], bottom: ["-150vmax", "-142vmax"] },
+      {
+        scale: [0, 1],
+        bottom: ["-110vh", "-100vh"],
+        borderRadius: ["100%", "0%"],
+      },
       { ...ANIMATION_CONFIG.leave, onComplete: next }
     );
   }, []);
@@ -48,7 +52,11 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
 
     animate(
       circle.current,
-      { scale: [1, 0], bottom: ["-142vmax", "-150vmax"] },
+      {
+        scale: [1, 0],
+        bottom: ["-100vh", "-110vh"],
+        borderRadius: ["0%", "100%"],
+      },
       ANIMATION_CONFIG.enter
     );
     animate(
@@ -65,13 +73,13 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
         <div
           ref={circle}
           id="transitionCircle"
-          className="fixed bg-aam-orange rounded-full pointer-events-none"
+          className="fixed bg-aam-orange pointer-events-none"
           style={{
-            width: "284vmax",
-            height: "284vmax",
+            width: "100vw",
+            height: "200vh",
             //bottom: "-142vmax",
             left: "50%",
-            marginLeft: "-142vmax",
+            marginLeft: "-50vw",
             transform: "scale(0)",
             zIndex: 50,
           }}
